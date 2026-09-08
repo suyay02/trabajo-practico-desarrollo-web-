@@ -1,0 +1,374 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #white;
+    color: #333;
+    line-height: 1.7;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+nav {
+    background-color: #000;
+    padding: 0.5rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.horizontal-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem 0;
+    overflow: hidden;
+}
+
+.horizontal-image {
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.horizontal-image:last-child {
+    margin-bottom: 0;
+}
+
+.horizontal-image:hover {
+    transform: scale(1.03);
+}
+
+.alternating-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.alternating-layout div {
+    margin-bottom: 1.5rem;
+}
+
+.alternating-layout div:nth-child(odd) {
+    margin-right: 0;
+}
+
+.alternating-layout div:nth-child(even) {
+    margin-left: 0;
+}
+
+
+
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .horizontal-image {
+        max-width: 100%;
+        height: auto;
+    }
+	
+    .alternating-layout div:nth-child(odd),
+    .alternating-layout div:nth-child(even) {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.contenedor-imagenes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centra las imágenes horizontalmente */
+        gap: 20px; /* Espacio entre las imágenes */
+        margin-top: 20px; /* Espacio sobre las imágenes */
+      }
+.contenedor-imagenes .grupo-imagenes {  /* Nuevo selector para los grupos */
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        width: 100%; /* Asegura que el grupo ocupe el ancho completo */
+      }
+
+.contenedor-imagenes img {
+        width: 45%; /* Para que quepan 2 en una fila con algo de espacio */
+        height: auto;
+        max-width: 350px; /* Limita el tamaño de las imágenes si es necesario */
+        border-radius: 8px; /* Opcional: Para bordes redondeados */
+		borderimg 
+ 
+ border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30 stretch;
+      
+	 
+	 
+}
+
+.contenedor-mapa {
+  position: relative; /* Para posicionar el overlay */
+  width: 400px; /* Ancho del contenedor (ajusta según tu imagen) */
+  height: 300px; /* Alto del contenedor (ajusta según tu imagen) */
+  overflow: hidden; /* Recorta cualquier parte del overlay que se salga */
+  border-radius: 8px; /* Bordes redondeados opcionales */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave opcional */
+  cursor: pointer; /* Indica que es interactivo */
+}
+
+.mapa {
+  width: 100%;
+  height: 100%;
+  display: block; /* Evita espacio extra debajo de la imagen */
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Transiciones suaves */
+}
+
+.contenedor-mapa:hover .mapa {
+  transform: scale(1.05); /* Ligeramente más grande al pasar el mouse */
+  filter: brightness(90%); /* Ligeramente más oscuro al pasar el mouse */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente oscuro */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  opacity: 0; /* Inicialmente invisible */
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 8px; /* Igual que el contenedor */
+}
+
+.contenedor-mapa:hover .overlay {
+  opacity: 1; /* Se vuelve visible al pasar el mouse */
+}
+
+.galeria-horizontal {
+ display: flex; /* Utiliza Flexbox para la disposición horizontal */
+ flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no caben */
+ justify-content: space-around; /* Distribuye los elementos con espacio alrededor */
+ padding: 20px;
+}
+
+.item {
+ width: calc(25% - 20px); /* Aproximadamente el 25% del ancho con margen */
+ margin-bottom: 20px;
+ border: 1px solid #ddd;
+ border-radius: 8px;
+ overflow: hidden;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ transition: box-shadow 0.3s ease-in-out;
+}
+
+.item:hover {
+ box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+ width: 100%;
+ height: auto;
+ display: block;
+ transition: transform 0.3s ease-in-out;
+}
+
+.item:hover img {
+ transform: scale(1.05);
+}
+
+.descripcion {
+ padding: 10px;
+ text-align: center;
+ font-size: 0.9em;
+ color: #555;
+}
+
+/* Media query para pantallas más pequeñas (ejemplo para 2 columnas) */
+@media (max-width: 768px) {
+ .item {
+  width: calc(50% - 20px);
+ }
+}
+
+/* Media query para pantallas aún más pequeñas (ejemplo para 1 columna) */
+@media (max-width: 480px) {
+ .item {
+  width: calc(100% - 20px);
+ }
+}
+
+footer {
+ background-color: black; /* Fondo negro */
+ color: white; /* Letras blancas */
+ padding: 20px; /* Espacio interno alrededor del contenido del footer */
+ text-align: center; /* Centra el texto (opcional) */
+}
+
+footer p {
+ margin-bottom: 10px; /* Espacio debajo del texto de copyright */
+ font-size: 0.9em; /* Tamaño de fuente más pequeño (opcional) */
+}
+
+footer nav ul {
+ list-style: none; /* Elimina los puntos de la lista */
+ padding: 0;
+ margin: 0;
+ display: flex; /* Dispone los elementos de la lista en línea */
+ justify-content: center; /* Centra los enlaces horizontalmente */
+}
+
+footer nav ul li {
+ margin: 0 15px; /* Espacio entre los elementos de la lista */
+}
+
+footer nav ul li a {
+ color: white; /* Color blanco para los enlaces */
+ text-decoration: none; /* Elimina el subrayado de los enlaces */
+ font-size: 0.85em; /* Tamaño de fuente más pequeño para los enlaces (opcional) */
+}
+
+footer nav ul li a:hover {
+ text-decoration: underline; /* Subraya los enlaces al pasar el mouse (opcional) */
+}
+
+
+}
+.galeria-horizontal {
+ display: flex; /* Disposición horizontal de los elementos */
+ justify-content: space-around; /* Espacio igual entre las imágenes */
+ padding: 20px;
+ background-color: #f4f4f4; /* Un fondo suave para la galería (opcional) */
+ border-radius: 8px; /* Bordes redondeados (opcional) */
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave (opcional) */
+}
+
+.item {
+ width: 300px; /* Ancho fijo de cada imagen (ajusta según tus imágenes) */
+ height: 200px; /* Alto fijo de cada imagen (ajusta según tus imágenes) */
+ overflow: hidden; /* Recorta cualquier parte de la imagen que se salga */
+ border-radius: 8px; /* Bordes redondeados para las imágenes */
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para cada imagen */
+ transition: box-shadow 0.3s ease-in-out; /* Transición para la sombra */
+}
+
+.item:hover {
+ box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+
+.item img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
+ transition: transform 0.3s ease-in-out; /* Transición para el movimiento */
+}
+
+.item:hover img {
+ transform: scale(1.05); /* Ligeramente más grande al pasar el mouse (efecto zoom) */
+ /* Otra opción: Desplazamiento ligero */
+ /* transform: translateY(-5px); */
+}
+
+
+}footer {
+ background-color: black; /* Fondo negro */
+ color: white; /* Letras blancas */
+ padding: 20px; /* Espacio interno alrededor del contenido del footer */
+ text-align: center; /* Centra el texto (opcional) */
+}
+
+footer p {
+ margin-bottom: 10px; /* Espacio debajo del texto de copyright */
+ font-size: 0.9em; /* Tamaño de fuente más pequeño (opcional) */
+}
+
+footer nav ul {
+ list-style: none; /* Elimina los puntos de la lista */
+ padding: 0;
+ margin: 0;
+ display: flex; /* Dispone los elementos de la lista en línea */
+ justify-content: center; /* Centra los enlaces horizontalmente */
+}
+
+footer nav ul li {
+ margin: 0 15px; /* Espacio entre los elementos de la lista */
+}
+
+footer nav ul li a {
+ color: white; /* Color blanco para los enlaces */
+ text-decoration: none; /* Elimina el subrayado de los enlaces */
+ font-size: 0.85em; /* Tamaño de fuente más pequeño para los enlaces (opcional) */
+}
+
+footer nav ul li a:hover {
+ text-decoration: underline; /* Subraya los enlaces al pasar el mouse (opcional) */
+}
