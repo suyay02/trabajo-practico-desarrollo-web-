@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lencería - Tienda Online</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Encabezado y Navegación -->
+  <header>
+    <div class="logo">Lencería Encanto</div>
+    <nav>
+      <button onclick="filtrarProductos('todos')">Todos</button>
+      <button onclick="filtrarProductos('corpinos')">Corpiños</button>
+      <button onclick="filtrarProductos('bombachas')">Bombachas</button>
+      <button onclick="filtrarProductos('conjuntos')">Conjuntos</button>
+    </nav>
+    <div class="carrito-icono">
+      🛒 Carrito (<span id="carrito-contador">0</span>)
+    </div>
+  </header>
+
+  <!-- Contenedor Principal -->
+  <main class="contenedor">
+    <!-- Catálogo de Productos -->
+    <section class="catalogo" id="catalogo">
+      <!-- Los productos se cargan dinámicamente desde JavaScript -->
+    </section>
+
+    <!-- Resumen del Carrito -->
+    <aside class="carrito-panel">
+      <h2>Tu Carrito</h2>
+      <ul id="carrito-lista">
+        <li class="vacio">El carrito está vacío.</li>
+      </ul>
+      <div class="total-contenedor">
+        <strong>Total: $<span id="carrito-total">0.00</span></strong>
+      </div>
+      <button class="btn-comprar" onclick="finalizarCompra()">Finalizar Compra</button>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
